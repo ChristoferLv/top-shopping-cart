@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 23%;
+  min-height: 400px;
+  border: 2px solid black;
+  flex-grow: 1;
+}
+
+.product-data {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  p {
+    margin: 1px;
+  }
+}
+
+.product-image {
+  width: 100%;
+  height: 60%;
+  flex-grow: 0;
+}
