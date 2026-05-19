@@ -45,6 +45,12 @@ function App() {
 
   return (
     <>
+    <header>
+      <p>Glad to Shop</p>
+      <div className="cart-btn">
+        C
+      </div>
+    </header>
       <div className="products-list">
         {cardsList.map((product) => <ProductCard key={product.id} productData={product} />)}
       </div>
