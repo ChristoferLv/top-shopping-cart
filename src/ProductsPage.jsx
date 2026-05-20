@@ -14,14 +14,6 @@ function ProductsPage() {
 
   }
 
-  console.log(cart);
-  console.log(cardsList);
-
-  useEffect(() => {
-    console.log("cart", cart);
-
-  }, [cart])
-
   useEffect(() => {
 
     async function buildCardList(cardsData) {

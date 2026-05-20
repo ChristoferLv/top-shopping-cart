@@ -6,7 +6,6 @@ function CartPage() {
     const [cart, setCart] = useOutletContext();
     const [cartList, setCartList] = useState([]);
 
-    console.log(cartList)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,8 +31,6 @@ function CartPage() {
     }, [cart]);
 
 
-    console.log("cartlist", cartList)
-    console.log("rerender")
     const total = cartList.reduce((acc, cur) => {
         return acc + (cur.amount * cur.price);
     }, 0)

@@ -10,8 +10,8 @@ function ProductCard({ productData, addProductHandler }) {
             </div>
             <div className="product-data">
                 <p>{productData.id}</p>
-                <p>{productData.title}</p>
-                <p>{productData.price}</p>
+                <p className="product-name">{productData.title}</p>
+                <p className="product-price">Price: ${productData.price}</p>
                 {/* <p>{productData.description}</p> */}
             </div>
             <div className="product-card-controls">
