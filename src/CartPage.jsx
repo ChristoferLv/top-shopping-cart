@@ -1,5 +1,59 @@
-function CartPage(){
-    return <><h1>Cart</h1></>
+import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router";
+import CartItem from "./CartItem";
+
+function CartPage() {
+    const [cart, setCart] = useOutletContext();
+    const [cartList, setCartList] = useState([]);
+
+    console.log(cartList)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // 1. Create a loop of promises
+                const fetchPromises = Object.keys(cart).map(id =>
+                    fetch(`https://fakestoreapi.com/products/${id}`).then(res => res.json())
+                );
+
+                // 2. Wait for all fetches to complete parallelly
+                const results = await Promise.all(fetchPromises);
+                const resultWithAmount = Object.keys(cart).map((item, index) => {
+                    return { ...(results[index]), amount: cart[item].amount }
+                })
+
+                setCartList(resultWithAmount);
+            } catch (error) {
+                console.error("Fetch failed", error);
+            }
+        };
+
+        fetchData();
+    }, [cart]);
+
+
+    console.log("cartlist", cartList)
+    console.log("rerender")
+    const total = cartList.reduce((acc, cur) => {
+        return acc + (cur.amount * cur.price);
+    }, 0)
+    return (
+        (Object.keys(cart).length > 0 ? < div className="cart" >
+            <div className="cart-list">
+                <p>Your Products</p>
+                {cartList.map((item) => { return <CartItem productData={item} /> })}
+            </div>
+            <div className="cart-details">
+                <p>Purchase Summary:</p>
+                <p>Total: ${total}</p>
+                <hr />
+                <button onClick={() => { setCart({}); alert("Payment Successfull.") }}>Checkout</button>
+            </div>
+        </div > : <div className="empty-cart">
+            <p>Your cart is empty. Choose any item to continue.</p>
+        </div>)
+
+    )
 }
 
 export default CartPage;

@@ -1,4 +1,8 @@
+import { useState } from "react";
+
+
 function ProductCard({ productData, addProductHandler }) {
+    const [amount, setAmount] = useState(productData.amount);
     return (<>
         <div className="product-card">
             <div className="product-image">
@@ -11,8 +15,10 @@ function ProductCard({ productData, addProductHandler }) {
                 {/* <p>{productData.description}</p> */}
             </div>
             <div className="product-card-controls">
-                <input type="text" />
-                <button onClick={()=>(addProductHandler(productData.id, 1))}>Add</button>
+                <input type="number"
+                    value={amount}
+                    onChange={(e) => { setAmount(e.target.value) }} />
+                <button onClick={() => (addProductHandler(productData.id, amount))}>Add</button>
             </div>
         </div>
     </>);
