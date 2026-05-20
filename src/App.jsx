@@ -21,10 +21,11 @@ function App() {
         <div className="links">
           <button onClick={() => { navigate("/home") }}>Home</button>
           <button onClick={() => { navigate("/products") }}>Products</button>
+          <button onClick={() => { navigate("/cart") }}> {`Cart (${Object.keys(cart).length})`}</button>
         </div>
-        <div onClick={() => { navigate("/cart") }} className="cart-btn">
+        {/* <div onClick={() => { navigate("/cart") }} className="cart-btn">
           {`Cart [${Object.keys(cart).length}]`}
-        </div>
+        </div> */}
       </header>
       <Outlet context={[cart, setCart]} />
     </>

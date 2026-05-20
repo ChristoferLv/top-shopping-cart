@@ -22,6 +22,7 @@ header {
 
   p {
     margin: 0;
+    margin-left: 5%;
     font-size: xx-large;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
@@ -29,7 +30,8 @@ header {
 }
 
 .links {
-  margin-left: 5%;
+  margin-left: auto;
+  margin-right: 5%;
   display: flex;
   gap: 0 10px;
 }
@@ -197,6 +199,14 @@ header {
   padding: 5px;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.cart-items-btns{
+  margin-top: 5px;
+
+  button{
+    margin-right: 5px;
+  }
 }
 
 .empty-cart{
