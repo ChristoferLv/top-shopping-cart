@@ -1,8 +1,9 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 
 function ProductCard({ productData, addProductHandler }) {
-    const [amount, setAmount] = useState(productData.amount);
+    const [amount, setAmount] = useState(productData.amount == 0 ? '' : productData.amount);
     return (<>
         <div className="product-card">
             <div className="product-image">
@@ -16,13 +17,24 @@ function ProductCard({ productData, addProductHandler }) {
             </div>
             <div className="product-card-controls">
                 <input type="number"
-                min={0}
+                    min={0}
                     value={amount}
                     onChange={(e) => { setAmount(e.target.value) }} />
                 <button onClick={() => (addProductHandler(productData.id, amount))}>Add</button>
             </div>
         </div>
     </>);
+}
+
+ProductCard.propTypes = {
+    productData: PropTypes.exact({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        price: PropTypes.number,
+        imageURL: PropTypes.string,
+        amount: PropTypes.number,
+    }),
+    addProductHandler: PropTypes.func.isRequired
 }
 
 

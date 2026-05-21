@@ -29,7 +29,7 @@ function CartPage() {
                 // 2. Wait for all fetches to complete parallelly
                 const results = await Promise.all(fetchPromises);
                 const resultWithAmount = Object.keys(cart).map((item, index) => {
-                    return { ...(results[index]), amount: cart[item].amount }
+                    return { id:results[index].id, title:results[index].title, price:results[index].price, imageURL:results[index].image, amount: cart[item].amount }
                 })
 
                 setCartList(resultWithAmount);

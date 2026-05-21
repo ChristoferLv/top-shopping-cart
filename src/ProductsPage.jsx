@@ -18,7 +18,6 @@ function ProductsPage() {
       return;
     }
     setCart({ ...cart, [productId]: { id: productId, amount: amount } });
-
   }
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function ProductsPage() {
         // const image = await fetch(data.image);
         // const imageBlob = await image.blob();
         // const imageURL = URL.createObjectURL(imageBlob);
-        cardsArray.push({ id, title, description, price, imageURL: data.image });
+        cardsArray.push({ id, title, price, imageURL: data.image });
       }
 
       return cardsArray;
@@ -56,7 +55,7 @@ function ProductsPage() {
     <>
       <div className="products-list">
         {cardsList.map((product) => <ProductCard key={product.id}
-          productData={(product.id in cart ? { ...product, amount: cart[product.id].amount } : { ...product, amount: '' })}
+          productData={(product.id in cart ? { ...product, amount: parseInt(cart[product.id].amount) } : { ...product, amount: 0 })}
           addProductHandler={addProductHandler} />)}
       </div>
     </>

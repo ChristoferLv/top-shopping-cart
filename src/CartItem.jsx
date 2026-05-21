@@ -1,7 +1,9 @@
-function CartItem({ productData, cartList, changeAmount }) {
+import PropTypes from "prop-types";
+
+function CartItem({ productData, changeAmount }) {
     return (<div className="cart-item">
         <div className="item-image">
-            <img src={productData.image} alt="" />
+            <img src={productData.imageURL} alt="" />
         </div>
         <div className="cart-item-body">
             <div className="item-info">
@@ -17,6 +19,18 @@ function CartItem({ productData, cartList, changeAmount }) {
         </div>
     </div>
     )
+}
+
+
+CartItem.propTypes = {
+    productData: PropTypes.exact({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        price: PropTypes.number,
+        amount: PropTypes.number,
+        imageURL: PropTypes.string,
+    }),
+    changeAmount:PropTypes.func.isRequired
 }
 
 export default CartItem;
