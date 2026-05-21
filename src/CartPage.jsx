@@ -7,22 +7,12 @@ function CartPage() {
     const [cartList, setCartList] = useState([]);
 
     function handleChangeItemAmount(id, amount) {
-        const item = cartList.find((item => item.id == id));
-        const itemId = item.id;
-        console.log("fount", item, cartList[item])
         if (amount == 0) {
-            console.log("here")
-            const { [itemId]: removed, ...newCart } = cart;
-            console.log("newcart", newCart)
+            const { [id]: removed, ...newCart } = cart;
             setCart(newCart);
         } else {
-            const newList = cartList.map((item) => {
-                if (item.id == id) {
-                    return { ...item, amount: amount };
-                }
-                return item;
-            });
-            setCartList(newList);
+            const newCart = { ...cart, [id]: { id:id, amount: amount } };
+            setCart(newCart);
         }
     }
 
