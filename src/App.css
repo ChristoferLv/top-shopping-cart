@@ -92,10 +92,10 @@ header {
 }
 
 .product-name,
-.product-price{
+.product-price {
   font-size: 15px;
   font-weight: bold;
-   display: -webkit-box;
+  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -105,18 +105,18 @@ header {
   display: flex;
   gap: 0 10px;
 
-  input{
+  input {
     max-width: 50%;
   }
 }
 
-.cart{
+.cart {
   display: flex;
   padding: 0 10%;
   gap: 0 30px;
 }
 
-.cart-details{
+.cart-details {
   flex-grow: 1;
   flex-basis: 30%;
   background-color: white;
@@ -128,15 +128,15 @@ header {
   max-height: fit-content;
 }
 
-.cart-details p{
+.cart-details p {
   margin-top: 10px;
 }
 
-.cart-details>p{
+.cart-details>p {
   font-weight: bold;
 }
 
-.cart-details button{
+.cart-details button {
   background-color: #3483fa;
   color: white;
   width: 100%;
@@ -148,20 +148,21 @@ header {
   cursor: pointer;
 }
 
-.cart-details button:hover{
+.cart-details button:hover {
   background-color: #2968c8;
 }
 
-.cart-list{
+.cart-list {
   display: flex;
   flex-direction: column;
   flex-grow: 3;
   gap: 10px 0;
   border-radius: 10px;
   height: fit-content;
+  margin-bottom: 20px;
 }
 
-.cart-list>p{
+.cart-list>p {
   font-size: xx-large;
   font-weight: bold;
   margin-bottom: 10px;
@@ -169,7 +170,8 @@ header {
 
 .cart-item {
   display: flex;
-  height: 160px;
+  width: 90%;
+  height: fit-content;
   flex-grow: 0;
   flex-basis: 0;
   background-color: white;
@@ -177,43 +179,53 @@ header {
   border: black 2px solid;
   border-radius: 10px;
   padding: 5px;
- 
+
+  text-overflow: ellipsis;
+
+
   p {
     margin: 1px;
     margin-top: 10px;
     font-size: large;
   }
 
-  p:first-of-type{
+
+  p:first-of-type {
     font-weight: bold;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
 .item-image {
   display: flex;
-  max-width: 30%;
-  max-height: 100%;
+  min-width: 80px;
+  max-width: 25%;
+  max-height: 180px;
   flex-grow: 0;
   margin-right: 10px;
   background-color: #f5f5f5;
   padding: 5px;
   overflow: hidden;
   border-radius: 10px;
+  align-self: center;
 }
 
-.cart-items-btns{
+.cart-items-btns {
   margin-top: 5px;
 
-  button{
+  button {
     margin-right: 5px;
   }
 }
 
-.empty-cart{
+.empty-cart {
   display: flex;
   justify-content: center;
 
-  p{
+  p {
     font-size: 50px;
     font-weight: bold;
   }

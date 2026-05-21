@@ -10,6 +10,13 @@ function ProductsPage() {
 
   function addProductHandler(productId, amount) {
     if (amount == '') return;
+    if (amount == 0) {
+      if (productId in cart) {
+        const { [productId]: removed, ...newCart } = cart;
+        setCart(newCart);
+      }
+      return;
+    }
     setCart({ ...cart, [productId]: { id: productId, amount: amount } });
 
   }

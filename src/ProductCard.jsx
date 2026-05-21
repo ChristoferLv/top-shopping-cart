@@ -16,6 +16,7 @@ function ProductCard({ productData, addProductHandler }) {
             </div>
             <div className="product-card-controls">
                 <input type="number"
+                min={0}
                     value={amount}
                     onChange={(e) => { setAmount(e.target.value) }} />
                 <button onClick={() => (addProductHandler(productData.id, amount))}>Add</button>
