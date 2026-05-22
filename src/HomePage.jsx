@@ -8,15 +8,15 @@ function HomePage() {
             <div className={styles.homePics}>
                 <div className={styles.productPicture}>
                     <p>Clothes</p>
-                    <img src="/clothes.avif" alt="" />
+                    <img src="/clothes.avif" alt="Clothes" />
                 </div>
                 <div className={styles.productPicture}>
                     <p>Computers</p>
-                    <img src="./computer.jpeg" alt="" />
+                    <img src="./computer.jpeg" alt="Computer" />
                 </div>
                 <div className={styles.productPicture}>
                     <p>Jewelry</p>
-                    <img src="./jewellery.avif" alt="" />
+                    <img src="./jewellery.avif" alt="Jewellery" />
                 </div>
             </div>
             <div className={styles.sale}>

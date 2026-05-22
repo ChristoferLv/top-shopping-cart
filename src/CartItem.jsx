@@ -12,7 +12,7 @@ function CartItem({ productData, changeAmount }) {
                 <p>{productData.title}</p>
                 <p>Amount: {productData.amount}</p>
                 <p>Price: ${productData.price}</p>
-                <p>Total: ${(productData.amount * productData.price).toFixed(2)}</p>
+                <p>Cart Total: ${(productData.amount * productData.price).toFixed(2)}</p>
             </div>
             <div className={styles.cartItemsBtns}>
                 <button onClick={() => changeAmount(productData.id, +productData.amount + 1)}>+</button>

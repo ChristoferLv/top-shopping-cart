@@ -7,9 +7,9 @@ import styles from "./ProductCard.module.css"
 function ProductCard({ productData, addProductHandler }) {
     const [amount, setAmount] = useState(productData.amount == 0 ? '' : productData.amount);
     return (<>
-        <div className={styles.productCard}>
+        <div className={styles.productCard} data-testid="product-card">
             <div className={styles.productImage}>
-                <img src={productData.imageURL} alt="" />
+                <img src={productData.imageURL} alt="Product Item Picture" />
             </div>
             <div className={styles.productData}>
                 <p>{productData.id}</p>
@@ -19,10 +19,11 @@ function ProductCard({ productData, addProductHandler }) {
             </div>
             <div className={styles.productCardControls}>
                 <input type="number"
+                    title="amount"
                     min={0}
                     value={amount}
                     onChange={(e) => { setAmount(e.target.value) }} />
-                <button onClick={() => (addProductHandler(productData.id, amount))}>Add</button>
+                <button onClick={() => (addProductHandler(productData.id, parseInt(amount)))}>Add</button>
             </div>
         </div>
     </>);

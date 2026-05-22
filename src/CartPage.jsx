@@ -13,14 +13,13 @@ function CartPage() {
             const { [id]: removed, ...newCart } = cart;
             setCart(newCart);
         } else {
-            const newCart = { ...cart, [id]: { id:id, amount: amount } };
+            const newCart = { ...cart, [id]: { id: id, amount: amount } };
             setCart(newCart);
         }
     }
 
 
     useEffect(() => {
-        console.log("cart changed")
         const fetchData = async () => {
             try {
                 // 1. Create a loop of promises
@@ -31,7 +30,7 @@ function CartPage() {
                 // 2. Wait for all fetches to complete parallelly
                 const results = await Promise.all(fetchPromises);
                 const resultWithAmount = Object.keys(cart).map((item, index) => {
-                    return { id:results[index].id, title:results[index].title, price:results[index].price, imageURL:results[index].image, amount: cart[item].amount }
+                    return { id: results[index].id, title: results[index].title, price: results[index].price, imageURL: results[index].image, amount: cart[item].amount }
                 })
 
                 setCartList(resultWithAmount);
@@ -40,7 +39,8 @@ function CartPage() {
             }
         };
 
-        fetchData();
+        if (Object.keys(cart).length > 0)
+            fetchData();
     }, [cart]);
 
 
