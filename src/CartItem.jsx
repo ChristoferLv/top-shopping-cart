@@ -5,7 +5,7 @@ import styles from "./CartItem.module.css"
 function CartItem({ productData, changeAmount }) {
     return (<div className={styles.cartItem}>
         <div className={styles.itemImage}>
-            <img src={productData.imageURL} alt="" />
+            <img src={productData.imageURL} alt="Cart Item Picture" />
         </div>
         <div className="cart-item-body">
             <div className={styles.itemInfo}>
