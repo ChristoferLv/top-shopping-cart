@@ -1,21 +1,23 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
+import styles from "./ProductCard.module.css"
+
 
 
 function ProductCard({ productData, addProductHandler }) {
     const [amount, setAmount] = useState(productData.amount == 0 ? '' : productData.amount);
     return (<>
-        <div className="product-card">
-            <div className="product-image">
+        <div className={styles.productCard}>
+            <div className={styles.productImage}>
                 <img src={productData.imageURL} alt="" />
             </div>
-            <div className="product-data">
+            <div className={styles.productData}>
                 <p>{productData.id}</p>
-                <p className="product-name">{productData.title}</p>
-                <p className="product-price">Price: ${productData.price}</p>
+                <p className={styles.productName}>{productData.title}</p>
+                <p className={styles.productPrice}>Price: ${productData.price}</p>
                 {/* <p>{productData.description}</p> */}
             </div>
-            <div className="product-card-controls">
+            <div className={styles.productCardControls}>
                 <input type="number"
                     min={0}
                     value={amount}

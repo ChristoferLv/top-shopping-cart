@@ -1,0 +1,8 @@
+.productsList {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-around;
+}

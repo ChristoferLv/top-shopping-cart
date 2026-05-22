@@ -1,23 +1,25 @@
+import styles from "./HomePage.module.css"
+
 function HomePage() {
     return (
-        <div className="home">
+        <div className={styles.home}>
             <p>***The BEST products for your house***</p>
             <p>BUY NOW</p>
-            <div className="home-pics">
-                <div className="product-picture">
+            <div className={styles.homePics}>
+                <div className={styles.productPicture}>
                     <p>Clothes</p>
                     <img src="/clothes.avif" alt="" />
                 </div>
-                <div className="product-picture">
+                <div className={styles.productPicture}>
                     <p>Computers</p>
                     <img src="./computer.jpeg" alt="" />
                 </div>
-                <div className="product-picture">
+                <div className={styles.productPicture}>
                     <p>Jewelry</p>
                     <img src="./jewellery.avif" alt="" />
                 </div>
             </div>
-            <div className="sale">
+            <div className={styles.sale}>
                 <p>Super</p>
                 <p>Sale</p>
             </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router";
 import CartItem from "./CartItem";
+import styles from "./CartPage.module.css"
+
 
 function CartPage() {
     const [cart, setCart] = useOutletContext();
@@ -47,18 +49,18 @@ function CartPage() {
     }, 0).toFixed(2);
 
     return (
-        (Object.keys(cart).length > 0 ? < div className="cart" >
-            <div className="cart-list">
+        (Object.keys(cart).length > 0 ? < div className={styles.cart} >
+            <div className={styles.cartList}>
                 <p>Your Products</p>
                 {cartList.map((item) => { return <CartItem key={item.id} productData={item} changeAmount={handleChangeItemAmount} /> })}
             </div>
-            <div className="cart-details">
+            <div className={styles.cartDetails}>
                 <p>Purchase Summary:</p>
                 <p>Total: ${total}</p>
                 <hr />
                 <button onClick={() => { setCart({}); alert("Payment Successfull.") }}>Checkout</button>
             </div>
-        </div > : <div className="empty-cart">
+        </div > : <div className={styles.emptyCart}>
             <p>Your cart is empty. Choose any item to continue.</p>
         </div>)
 

@@ -1,0 +1,87 @@
+.home>p {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  background-color: yellow;
+  margin: 0;
+  margin-top: -10px;
+  padding: 5px;
+}
+
+.homePics {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 15px;
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.homePics img {
+  object-fit: fill;
+  height: 30vh;
+}
+
+.productPicture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 16px -5px #000000;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.productPicture:hover {
+  transform: scale(1.1);
+}
+
+.productPicture p {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .productPicture p {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 570px) {
+  .productPicture p {
+    font-size: 14px;
+  }
+}
+
+.sale {
+  display: flex;
+  justify-content: space-around;
+  gap: 0 250px;
+}
+
+.sale p {
+  font-size: 45px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  animation: spin 2000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  color: red;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}

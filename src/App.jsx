@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import ProductCard from './ProductCard';
 import { Outlet, useLocation, useNavigate } from 'react-router';
+import styles from "./App.module.css"
+import "./main.css"
 
 function App() {
   const location = useLocation();
@@ -16,9 +17,9 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className={styles.mainHeader}>
         <p>Glad to Shop</p>
-        <div className="links">
+        <div className={styles.links}>
           <button onClick={() => { navigate("/home") }}>Home</button>
           <button onClick={() => { navigate("/products") }}>Products</button>
           <button onClick={() => { navigate("/cart") }}> {`Cart (${Object.keys(cart).length})`}</button>

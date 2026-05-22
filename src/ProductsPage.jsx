@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useOutletContext } from "react-router";
-import './App.css'
 import ProductCard from './ProductCard';
+import styles from "./ProductsPage.module.css"
+
 
 
 function ProductsPage() {
@@ -53,7 +54,7 @@ function ProductsPage() {
 
   return (
     <>
-      <div className="products-list">
+      <div className={styles.productsList}>
         {cardsList.map((product) => <ProductCard key={product.id}
           productData={(product.id in cart ? { ...product, amount: parseInt(cart[product.id].amount) } : { ...product, amount: 0 })}
           addProductHandler={addProductHandler} />)}
