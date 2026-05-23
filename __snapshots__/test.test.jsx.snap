@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test HomePage > Renders the HomePage correctly 1`] = `
+<div>
+  <div
+    class="_home_bc114d"
+  >
+    <p>
+      ***The BEST products for your house***
+    </p>
+    <p>
+      BUY NOW
+    </p>
+    <div
+      class="_homePics_bc114d"
+    >
+      <div
+        class="_productPicture_bc114d"
+      >
+        <p>
+          Clothes
+        </p>
+        <img
+          alt="Clothes"
+          src="/clothes.avif"
+        />
+      </div>
+      <div
+        class="_productPicture_bc114d"
+      >
+        <p>
+          Computers
+        </p>
+        <img
+          alt="Computer"
+          src="./computer.jpeg"
+        />
+      </div>
+      <div
+        class="_productPicture_bc114d"
+      >
+        <p>
+          Jewelry
+        </p>
+        <img
+          alt="Jewellery"
+          src="./jewellery.avif"
+        />
+      </div>
+    </div>
+    <div
+      class="_sale_bc114d"
+    >
+      <p>
+        Super
+      </p>
+      <p>
+        Sale
+      </p>
+    </div>
+  </div>
+</div>
+`;
