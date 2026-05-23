@@ -56,6 +56,10 @@ A small storefront with Home, Products, and Cart pages. Products are loaded from
 - HTML and CSS
 - Vitest and Testing Library
 
+## Visualization
+
+<img width="1900" height="1034" alt="localhost_5173_cart" src="https://github.com/user-attachments/assets/cfd3d91a-ef8a-4026-8348-716e08b362c1" />
+
 ---
 
 Project built following: [The Odin Project - Shopping Cart](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)
