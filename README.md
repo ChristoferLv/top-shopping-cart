@@ -1,6 +1,6 @@
 # Shopping Cart
 
-Shopping cart project developed as part of the React course from [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart), focused on routing, shared state, and component testing.
+Shopping cart project developed as part of the React course from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/react), focused on routing, shared state, and component testing.
 
 ## Project Objective
 
